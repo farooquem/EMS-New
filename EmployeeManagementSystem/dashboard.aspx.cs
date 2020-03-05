@@ -24,7 +24,7 @@ namespace EmployeeManagementSystem
             }
             else
             {
-                lblGreeting.Text = "Good Evening" + userId;
+                lblGreeting.Text = "Good Evening " + userId;
             }
         }
     }

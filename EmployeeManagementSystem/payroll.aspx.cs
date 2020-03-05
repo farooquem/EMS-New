@@ -12,10 +12,16 @@ namespace EmployeeManagementSystem
     public partial class payroll : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
-        {
-            selected_tab.Value = ((HiddenField) Page.FindControl(selected_tab.UniqueID)).Value;
+
+        { 
+        var userId = Convert.ToString(Session["userId"]);
+        selected_tab.Value = ((HiddenField) Page.FindControl(selected_tab.UniqueID)).Value;
             if (!IsPostBack)
             {
+                if (string.IsNullOrWhiteSpace(userId))
+                {
+                    Response.Redirect("~/Login.aspx");
+                }
                 var years = new[] {DateTime.Now.Year - 1, DateTime.Now.Year};
                 ddlYear.DataSource = years;
                 ddlYear.DataBind();

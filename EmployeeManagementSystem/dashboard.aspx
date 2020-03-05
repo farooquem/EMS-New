@@ -3,6 +3,6 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-        <div><asp:Label runat="server" ID="lblGreeting" ForeColor="blue"></asp:Label>
+        <div><asp:Label runat="server" CssClass="h3" ID="lblGreeting" ForeColor="blue"></asp:Label>
         </div>
    </asp:Content>

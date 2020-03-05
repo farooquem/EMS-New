@@ -9,8 +9,13 @@ namespace EmployeeManagementSystem
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            var userId = Convert.ToString(Session["userId"]);
             if (!IsPostBack)
             {
+                if (string.IsNullOrWhiteSpace(userId))
+                {
+                    Response.Redirect("~/Login.aspx");
+                }
                 var emp = new EmployeeManagementContext();
                 ddlEmployeeName.DataSource = emp.GetEmployeeName();
                 ddlEmployeeName.DataTextField = "Name";

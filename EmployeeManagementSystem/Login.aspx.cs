@@ -54,7 +54,7 @@ namespace EmployeeManagementSystem
 
         protected void BtnResetPassword_OnClick(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            Response.Redirect("ResetPassword.aspx");
         }
     }
 }

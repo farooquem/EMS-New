@@ -2,7 +2,7 @@
 
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-
+    <h3>Employee Details</h3>
     <div id="filt" style="margin-top: 20px" class="container-fluid">
         <div id="controls" runat="server">
             <div class="row">

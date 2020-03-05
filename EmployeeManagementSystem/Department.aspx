@@ -1,6 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Department.aspx.cs" Inherits="EmployeeManagementSystem.Department" MasterPageFile="~/Site.Master" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <h3>Department</h3>
     <div id="filt" style="margin-top: 20px" class="container-fluid">
     <div ID="controls" runat="server" class="form-inline">
         

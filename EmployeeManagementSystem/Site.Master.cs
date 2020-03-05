@@ -9,5 +9,11 @@ namespace EmployeeManagementSystem
         {
             
         }
+
+        protected void lnklogout_OnServerClick(object sender, EventArgs e)
+        {
+           Session.Abandon();
+           Response.Redirect("~/Login.aspx");
+        }
     }
 }

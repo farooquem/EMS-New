@@ -3,7 +3,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <h3>Employee Pay</h3>
+    <h3>Employee Payroll</h3>
 
     <div class="container ">
         <!-- Header -->

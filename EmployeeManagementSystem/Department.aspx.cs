@@ -8,8 +8,14 @@ namespace EmployeeManagementSystem
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            var userId = Convert.ToString(Session["userId"]);
+
             if (!IsPostBack)
             {
+                if (string.IsNullOrWhiteSpace(userId))
+                {
+                    Response.Redirect("~/Login.aspx");
+                }
                 BindData();
                 SetStage(Stage.Load);
             }

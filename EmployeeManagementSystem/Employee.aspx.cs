@@ -10,8 +10,15 @@ namespace EmployeeManagementSystem
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            var userId = Convert.ToString(Session["userId"]);
+
             if (!IsPostBack)
             {
+                if (string.IsNullOrWhiteSpace(userId))
+                {
+                    Response.Redirect("~/Login.aspx");
+                }
+
                 var emp = new EmployeeManagementContext();
                 ddlDepartment.DataSource = emp.GetActiveDepartment();
                 ddlDepartment.DataTextField = "Name";
@@ -27,7 +34,7 @@ namespace EmployeeManagementSystem
             }
 
         }
-        
+
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             var employeeId = gvEmployee.SelectedRow.Cells[2].Text;
