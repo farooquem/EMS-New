@@ -25,4 +25,17 @@
                 </div>
             </div>
         </div>
-   </asp:Content>
+    <div align="center">
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+
+    <h1 style="color: purple;font-size: 50px">Welcome to Employee Management System</h1>
+    </div>
+</asp:Content>

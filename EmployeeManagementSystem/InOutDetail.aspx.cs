@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 using EmployeeManagementSystem.Context;
 
 namespace EmployeeManagementSystem
@@ -41,8 +37,7 @@ namespace EmployeeManagementSystem
             }
             catch (Exception exception)
             {
-                Console.WriteLine(exception);
-                throw;
+
             }
             
         }
@@ -52,6 +47,21 @@ namespace EmployeeManagementSystem
             txtFromDate.Text = string.Empty;
             txtToDate.Text = string.Empty;
             ddlEmployee.SelectedIndex = 0;
+        }
+
+        protected void btnGenerate_OnClick(object sender, EventArgs e)
+        {
+            EmployeeManagementContext context = new EmployeeManagementContext();
+            context.GenerateInOut(Convert.ToDateTime(txtFromDate.Text), Convert.ToDateTime(txtToDate.Text),
+                Convert.ToInt32(ddlEmployee.SelectedValue));
+            ShowAlert("In/Out time generated for below date range");
+        }
+
+        private void ShowAlert(string message)
+        {
+            string script = "alert('" + message + "')";
+            ScriptManager.RegisterStartupScript(this, GetType(),
+                "ServerControlScript", script, true);
         }
     }
 }

@@ -22,7 +22,10 @@
             <div style="margin-top: 20px">
             <asp:Button runat="server" ID="btnSearch" Text="Search" CssClass="btn btn-primary" OnClick="btnSearch_OnClick"/>
             <asp:Button runat="server" ID="btnReset" Text="Reset" CssClass="btn btn-primary" OnClick="btnReset_OnClick" CausesValidation="False" OnClientClick="return cleanForm();" />
-            </div>
+                <asp:Button runat="server" ID="btnGenerate" Text="Generate" CssClass="btn btn-danger" OnClick="btnGenerate_OnClick" CausesValidation="False"
+                            OnClientClick="return confirm('Are you sure you want to proceed. previous data will get deleted for the below date range?'); "  />
+            
+                </div>
                 </div>
     </div>
 </div>
