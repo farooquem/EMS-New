@@ -31,7 +31,7 @@
 </div>
     <div id="grid">
         <asp:GridView CssClass="table  table-bordered table-hover table-striped"
-                      runat="server" ID="gvInOut" AutoGenerateColumns="False" AllowPaging="True" ShowHeaderWhenEmpty="True"
+                      runat="server" ID="gvInOut" PageSize="2" OnPageIndexChanging="gvInOut_OnPageIndexChanging" AutoGenerateColumns="False" AllowPaging="True" ShowHeaderWhenEmpty="True"
                       EmptyDataText="There are no data records to display.">
             <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="White" />
             <Columns>

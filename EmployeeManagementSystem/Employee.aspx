@@ -108,7 +108,8 @@
 
     <div id="grid">
         <asp:GridView CssClass="table table-striped table-bordered table-hover"
-            runat="server" ID="gvEmployee" AutoGenerateColumns="False" AutoGenerateSelectButton="True" OnSelectedIndexChanged="GridView1_SelectedIndexChanged"
+            runat="server" ID="gvEmployee" AutoGenerateColumns="False" AutoGenerateSelectButton="True"
+                      OnSelectedIndexChanged="GridView1_SelectedIndexChanged" PageSize="2" OnPageIndexChanging="gvEmployee_OnPageIndexChanging"
             AllowPaging="True" ShowHeaderWhenEmpty="True" EmptyDataText="There are no data records to display.">
             <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="White" />
             <Columns>

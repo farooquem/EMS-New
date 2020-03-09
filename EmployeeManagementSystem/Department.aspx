@@ -33,7 +33,8 @@
     </div>
     <div id="grid">
         <asp:GridView CssClass="table table-striped table-bordered table-hover"
-            runat="server" ID="gvDepartment" AutoGenerateColumns="False" AutoGenerateSelectButton="True" OnSelectedIndexChanged="gvDepartment_OnSelectedIndexChanged"
+            runat="server" ID="gvDepartment" AutoGenerateColumns="False" AutoGenerateSelectButton="True"
+                      PageSize="2" OnPageIndexChanging="gvDepartment_OnPageIndexChanging" OnSelectedIndexChanged="gvDepartment_OnSelectedIndexChanged"
             AllowPaging="True" ShowHeaderWhenEmpty="True" EmptyDataText="There are no data records to display.">
             <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="White" />
             <Columns>

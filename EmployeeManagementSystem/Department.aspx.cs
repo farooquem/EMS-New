@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 using EmployeeManagementSystem.Context;
 
 namespace EmployeeManagementSystem
@@ -130,6 +131,12 @@ namespace EmployeeManagementSystem
             }
 
             SetStage(Stage.Edit);
+        }
+
+        protected void gvDepartment_OnPageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvDepartment.PageIndex = e.NewPageIndex;
+            BindData();
         }
     }
 }

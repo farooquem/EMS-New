@@ -9,8 +9,7 @@
 
 namespace EmployeeManagementSystem
 {
-
-
+    
     public partial class Department
     {
 

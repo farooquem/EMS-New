@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using EmployeeManagementSystem.Context;
@@ -67,8 +65,19 @@ namespace EmployeeManagementSystem
 
         protected void BtnView_OnClick(object sender, EventArgs e)
         {
+            BindData();
+        }
+
+        protected void gvpaySlip_OnPageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvpaySlip.PageIndex = e.NewPageIndex;
+            BindData();
+        }
+
+        private void BindData()
+        {
             var context = new EmployeeManagementContext();
-           var dt = context.GetPaySlip(Convert.ToInt32(ddlYear.SelectedValue), Convert.ToInt32(ddlMonth.SelectedValue));
+            var dt = context.GetPaySlip(Convert.ToInt32(ddlYear.SelectedValue), Convert.ToInt32(ddlMonth.SelectedValue));
             gvpaySlip.DataSource = dt;
             gvpaySlip.DataBind();
         }

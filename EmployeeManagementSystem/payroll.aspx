@@ -63,7 +63,8 @@
                     <div id="grid">
                         <asp:GridView CssClass="table table-striped table-bordered table-hover"
                             runat="server" ID="gvpaySlip" AutoGenerateColumns="False"
-                            AllowPaging="True" ShowHeaderWhenEmpty="True" EmptyDataText="There are no data records to display.">
+                            AllowPaging="True" ShowHeaderWhenEmpty="True" EmptyDataText="There are no data records to display."
+                                     PageSize="2" OnPageIndexChanging="gvpaySlip_OnPageIndexChanging" >
                             <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="White" />
                             <Columns>
                                 <asp:BoundField DataField="EmployeeId" HeaderText="EmployeeId" ReadOnly="True" />

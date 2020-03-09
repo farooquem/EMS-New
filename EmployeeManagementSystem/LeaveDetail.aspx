@@ -54,8 +54,9 @@
 </div>
     <div id="grid">
         <asp:GridView CssClass="table table-striped table-bordered table-hover"
-                      runat="server" ID="gvLeave" AutoGenerateColumns="False" OnRowDeleting="gvLeave_OnRowDeleting" OnSelectedIndexChanged="gvLeave_OnSelectedIndexChanged"
-                      
+                      runat="server" ID="gvLeave" AutoGenerateColumns="False" 
+                      OnRowDeleting="gvLeave_OnRowDeleting" OnSelectedIndexChanged="gvLeave_OnSelectedIndexChanged"
+                      PageSize="2" OnPageIndexChanging="gvLeave_OnPageIndexChanging"
                       AllowPaging="True" ShowHeaderWhenEmpty="True" EmptyDataText="There are no data records to display.">
             <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="White" />
             <Columns>

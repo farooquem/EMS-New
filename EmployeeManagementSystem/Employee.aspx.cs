@@ -277,6 +277,12 @@ namespace EmployeeManagementSystem
         {
             throw new NotImplementedException();
         }
+
+        protected void gvEmployee_OnPageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvEmployee.PageIndex = e.NewPageIndex;
+            BindData();
+        }
     }
 
     public enum Stage

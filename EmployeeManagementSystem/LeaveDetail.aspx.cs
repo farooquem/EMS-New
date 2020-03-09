@@ -165,5 +165,11 @@ namespace EmployeeManagementSystem
             context.DeleteLeaveDetails(Convert.ToInt32(e.Values[0]), true);
             SetStage(Stage.Load);
         }
+
+        protected void gvLeave_OnPageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvLeave.PageIndex = e.NewPageIndex;
+            BindData();
+        }
     }
 }

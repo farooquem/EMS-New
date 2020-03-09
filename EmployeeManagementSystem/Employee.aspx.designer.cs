@@ -10,7 +10,6 @@
 namespace EmployeeManagementSystem
 {
 
-
     public partial class Employee
     {
 

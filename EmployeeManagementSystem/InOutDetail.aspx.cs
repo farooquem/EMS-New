@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 using EmployeeManagementSystem.Context;
 
 namespace EmployeeManagementSystem
@@ -29,13 +30,9 @@ namespace EmployeeManagementSystem
         {
             try
             {
-                var context = new EmployeeManagementContext();
-                gvInOut.DataSource = context.GetInOutDetails(Convert.ToDateTime(txtFromDate.Text),
-                    Convert.ToDateTime(txtToDate.Text),
-                    Convert.ToInt32(ddlEmployee.SelectedValue));
-                gvInOut.DataBind();
+               BindData();
             }
-            catch (Exception exception)
+            catch (Exception)
             {
 
             }
@@ -62,6 +59,22 @@ namespace EmployeeManagementSystem
             string script = "alert('" + message + "')";
             ScriptManager.RegisterStartupScript(this, GetType(),
                 "ServerControlScript", script, true);
+        }
+
+        protected void gvInOut_OnPageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            gvInOut.PageIndex = e.NewPageIndex;
+            BindData();
+
+        }
+
+        private void BindData()
+        {
+            var context = new EmployeeManagementContext();
+            gvInOut.DataSource = context.GetInOutDetails(Convert.ToDateTime(txtFromDate.Text),
+                Convert.ToDateTime(txtToDate.Text),
+                Convert.ToInt32(ddlEmployee.SelectedValue));
+            gvInOut.DataBind();
         }
     }
 }
